@@ -55,3 +55,11 @@ markComplete=(e)=>{
   }
 <input type="checkbox" onChange={this.markComplete} />{' '}
 ```
+
+傳遞數值
+```jsx
+  markComplete = (id) => {
+    console.log(id);
+  }
+<input type="checkbox" onChange={this.markComplete.bind(this,1)} />{' '}
+```

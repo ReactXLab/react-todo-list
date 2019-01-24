@@ -40,3 +40,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Tutorial video
 [YouTube-React JS Crash Course-2019](https://www.youtube.com/watch?v=sBws8MSXN7A)
 
+## 兩種函式呼叫方式
+
+```jsx
+markComplete(e){
+    console.log(this.props);
+  }
+<input type="checkbox" onChange={this.markComplete.bind(this)} />{' '}
+```
+
+```jsx
+markComplete=(e)=>{
+    console.log(this.props);
+  }
+<input type="checkbox" onChange={this.markComplete} />{' '}
+```

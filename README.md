@@ -100,7 +100,18 @@ this.setState({
     });
 ```
 
-### 3. 變數建立位置
+### 3. Props
+Props 就好比 HTML 標籤中的屬性可以傳遞變數或函式
+
+```jsx
+// App.js
+<Todos todos={this.state.todos} />
+
+// Todos.js
+const todos = this.props.todos;  // 可以使用map依序讀裡面物件將每個子項目渲染(TodoItem)
+```
+
+### 4. 變數建立位置
 
 - Function 箭頭函式
 放置在 `Class` 類別全域變數中

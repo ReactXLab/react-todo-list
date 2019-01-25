@@ -81,14 +81,33 @@ state = {
         id: 2,
         title: 'Clean my house',
         completed: false
-      },
-      {
-        id: 3,
-        title: 'Meeting with boss',
-        completed: false
       }
     ]
   }
 ```
 
-### 修改
+#### 修改
+此方法利用 `map` 修改 `Object` 內的值。
+
+```jsx
+this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
+```
+
+### 3. 變數建立位置
+
+- Function 箭頭函式
+放置在 `Class` 類別全域變數中
+
+- Style 樣式變數
+建立 Style 可以用物件型態變數包起來一樣放在 `Class` 類別全域變數中
+
+總結： 只要是變數都必續擺放在 `Class` 最外層，例如函式、樣式變數
+
+

@@ -40,8 +40,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Tutorial video
 [YouTube-React JS Crash Course-2019](https://www.youtube.com/watch?v=sBws8MSXN7A)
 
-## 兩種函式呼叫方式
+### 1. 兩種函式呼叫方式
 
+Function 可利用 props 傳遞 `this.functionName.bind(this,id)`
 ```jsx
 markComplete(e){
     console.log(this.props);
@@ -63,3 +64,31 @@ markComplete=(e)=>{
   }
 <input type="checkbox" onChange={this.markComplete.bind(this,1)} />{' '}
 ```
+
+### 2. status
+#### 建立
+建立在 `render()` 上面，當作 Class 的全域變數。
+
+```jsx
+state = {
+    todos: [
+      {
+        id: 1,
+        title: 'Take out the trash',
+        completed: true
+      },
+      {
+        id: 2,
+        title: 'Clean my house',
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Meeting with boss',
+        completed: false
+      }
+    ]
+  }
+```
+
+### 修改

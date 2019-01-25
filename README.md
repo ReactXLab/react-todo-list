@@ -64,6 +64,17 @@ markComplete=(e)=>{
   }
 <input type="checkbox" onChange={this.markComplete.bind(this,1)} />{' '}
 ```
+若在函式call()內呼叫傳值函式時不需要 `bind`
+```jsx
+  markComplete = (id) => {
+    console.log(id);
+  }
+  call = (){
+    this.markComplete(id);
+  }
+<input type="checkbox" onChange={this.call} />{' '}
+```
+
 
 ### 2. status
 #### 建立

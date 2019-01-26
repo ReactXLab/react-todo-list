@@ -84,15 +84,13 @@ class App extends Component {
         <div className="App">
           <div className="container">
             <Header />
-            <Switch>
               <Route exact path="/" render={props => (
                 <React.Fragment>
                   <AddTodo addTodo={this.addTodo} />
                   <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
                 </React.Fragment>
               )} />
-              <Route path="/about" component={About} />
-            </Switch>
+              <Route path="/about/" component={About} />
           </div>
         </div>
       </Router>

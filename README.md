@@ -139,6 +139,29 @@ const todos = this.props.todos;  // 可以使用map依序讀裡面物件將每�
 yarn add react-router-dom
 ```
 
+最外層用 `Router` 包起來，接著使用 `Route` 分別對個別的路徑做設定與初始化，如果裡面有很多個元件可以使用 `render` 的函式渲染所有的元件。若只有一個元件可以使用 `component` 渲染。此外主 `Router` 的 `exact` 關鍵字可以避免其他路徑也去吃到 root 的內容。
+
+```jsx
+import { BrowserRouter as Router,Route} from 'react-router-dom'
+
+
+<Router>
+  <div className="App">
+    <div className="container">
+      <Header />
+      <Route exact path="/" render={props=>(
+        <React.Fragment>
+          <AddTodo addTodo={this.addTodo} />
+          <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+        </React.Fragment>
+      )}/>
+      <Route path="/about" component={About}/>
+    </div>
+  </div>
+</Router>
+
+```
+
 
 RCG 建立 React Function
 RCE 建立 React Class

@@ -80,7 +80,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router basename={'https://reactxlab.github.io/react-todo-list'}>
+      <Router>
         <div className="App">
           <div className="container">
             <Header />

@@ -165,3 +165,23 @@ import { BrowserRouter as Router,Route} from 'react-router-dom'
 
 RCG 建立 React Function
 RCE 建立 React Class
+
+
+### deploy to GitHub page
+Install the gh-pages package as a "dev-dependency" of the app. 
+
+```bash
+yarn add gh-pages
+```
+
+Add some properties to the app's package.json file. 
+
+```json
+//...
+"homepage": "http://ReactXLab.github.io/react-todo-list",
+"scripts": {
+    "deploy": "gh-pages -d build"
+  }
+```
+
+

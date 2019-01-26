@@ -80,11 +80,11 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <Router basename={'https://reactxlab.github.io/react-todo-list'}>
         <div className="App">
           <div className="container">
             <Header />
-            <Route exact path="/" basename={'https://reactxlab.github.io/react-todo-list'} render={props => (
+            <Route exact path="/" render={props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo} />
                 <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />

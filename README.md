@@ -133,3 +133,12 @@ const todos = this.props.todos;  // 可以使用map依序讀裡面物件將每�
 總結： 只要是變數都必續擺放在 `Class` 最外層，例如函式、樣式變數
 
 
+### 5. Router
+
+```bash
+yarn add react-router-dom
+```
+
+
+RCG 建立 React Function
+RCE 建立 React Class

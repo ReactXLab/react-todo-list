@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 // import uuid from 'uuid';
 import axios from 'axios';
 import Todos from './components/Todos';
@@ -84,13 +84,15 @@ class App extends Component {
         <div className="App">
           <div className="container">
             <Header />
-            <Route exact path="/" render={props => (
-              <React.Fragment>
-                <AddTodo addTodo={this.addTodo} />
-                <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
-              </React.Fragment>
-            )} />
-            <Route path="/about" component={About} />
+            <Switch>
+              <Route exact path="/" render={props => (
+                <React.Fragment>
+                  <AddTodo addTodo={this.addTodo} />
+                  <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+                </React.Fragment>
+              )} />
+              <Route path="/about" component={About} />
+            </Switch>
           </div>
         </div>
       </Router>
